@@ -60,7 +60,19 @@ case "$1" in
 	repo_sync $1
 	;;
 
+"sc02c-b2jc")
+	echo DEVICE=sc02c >> .tmp-config &&
+	echo LUNCH=full_sc02c-userdebug >> .tmp-config &&
+	repo_sync $1
+	;;
+
 "sc06d")
+	echo DEVICE=sc06d >> .tmp-config &&
+	echo LUNCH=full_sc06d-userdebug >> .tmp-config &&
+	repo_sync $1
+	;;
+
+"sc06d-b2jc")
 	echo DEVICE=sc06d >> .tmp-config &&
 	echo LUNCH=full_sc06d-userdebug >> .tmp-config &&
 	repo_sync $1
@@ -138,7 +150,9 @@ case "$1" in
 	echo Valid devices to configure are:
 	echo - galaxy-s2
 	echo - sc02c
+	echo - sc02c-b2jc
 	echo - sc06d
+	echo - sc06d-b2jc
 	echo - galaxy-nexus
 	echo - nexus-s
 	echo - nexus-s-ja
