@@ -78,6 +78,18 @@ case "$1" in
 	repo_sync $1
 	;;
 
+"anzu")
+	echo DEVICE=anzu >> .tmp-config &&
+	echo LUNCH=full_anzu-userdebug >> .tmp-config &&
+	repo_sync $1
+	;;
+
+"urushi")
+	echo DEVICE=urushi >> .tmp-config &&
+	echo LUNCH=full_urushi-userdebug >> .tmp-config &&
+	repo_sync $1
+	;;
+
 "galaxy-nexus")
 	echo DEVICE=maguro >> .tmp-config &&
 	repo_sync $1
