@@ -28,7 +28,7 @@ case `uname` in
 	exit -1
 esac
 
-GITREPO=${GITREPO:-"git://github.com/neuralassembly/b2g-manifest"}
+GITREPO=${GITREPO:-"git://github.com/iambibhas/b2g-manifest"}
 BRANCH=${BRANCH:-v1-train}
 
 GIT_TEMP_REPO="tmp_manifest_repo"
@@ -79,8 +79,14 @@ case "$1" in
 	;;
 
 "anzu")
-	echo DEVICE=anzu >> .tmp-config &&
-	echo LUNCH=full_anzu-userdebug >> .tmp-config &&
+    echo DEVICE=anzu >> .tmp-config &&
+    echo LUNCH=full_anzu-userdebug >> .tmp-config &&
+    repo_sync $1
+    ;;
+
+"haida")
+	echo DEVICE=haida >> .tmp-config &&
+	echo LUNCH=full_haida-userdebug >> .tmp-config &&
 	repo_sync $1
 	;;
 
@@ -176,7 +182,8 @@ case "$1" in
 	echo - sc02c
 	echo - sc02c-b2jc
 	echo - sc06d
-	echo - sc06d-b2jc
+    echo - sc06d-b2jc
+	echo - haida
 	echo - galaxy-nexus
 	echo - nexus-s
 	echo - nexus-s-ja
